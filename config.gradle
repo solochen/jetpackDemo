@@ -1,0 +1,47 @@
+ext{
+    dependVersion = [
+            kotlinVersion: "1.3.50",
+            navVersion: "2.1.0",
+            cameraxVersion: "1.0.0-alpha06",
+            pagingVersion: "2.1.0-alpha01",
+            pagingRxjavaVersion: "1.0.0-rc1",
+            roomVersion:"2.1.0-beta01"
+    ]
+
+    externalCompileSDKVersion = 28
+    externalBuildToolsVersion = "29.0.0"
+    externalMinSDKVersion = 21
+    externalTargetSDKVersion = 28
+
+    externalVersionCode = 1
+    externalVersionName = '1.0'
+
+    externalAndroidxAppcompat= "androidx.appcompat:appcompat:1.0.2"
+    externalAdroidxCore = "androidx.core:core-ktx:1.0.2"
+
+    externalConstraintlayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+
+    externalLegacy = 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //kotlin
+    externalKotlinPlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$dependVersion.kotlinVersion"
+    externalKotlinJDK = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$dependVersion.kotlinVersion"
+
+    //navigation
+    externalNavigationFragment = "androidx.navigation:navigation-fragment-ktx:$dependVersion.navVersion"
+    externalNavigationUI = "androidx.navigation:navigation-ui-ktx:$dependVersion.navVersion"
+
+    //cameraX
+    externalCameraCore =  "androidx.camera:camera-core:$dependVersion.cameraxVersion"
+    externalCamera2 = "androidx.camera:camera-camera2:$dependVersion.cameraxVersion"
+
+    //paging
+    externalPagingRuntime = "androidx.paging:paging-runtime:$dependVersion.pagingVersion"
+    externalPagingRxjava =  "android.arch.paging:rxjava2:$dependVersion.pagingRxjavaVersion"
+
+    // room
+    externalRoomRuntime = "androidx.room:room-runtime:$dependVersion.roomVersion"
+    externalRoomKtx =  "androidx.room:room-ktx:$dependVersion.roomVersion"
+    externalRoomCompiler = "androidx.room:room-compiler:$dependVersion.roomVersion"
+
+}

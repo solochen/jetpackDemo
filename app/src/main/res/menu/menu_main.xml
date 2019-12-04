@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/hotFragment"
+        android:icon="@mipmap/ic_logout_ref"
+        android:title="热门" />
+
+    <item
+        android:id="@+id/recommentFragment"
+        android:icon="@mipmap/ic_logout_ref"
+        android:title="推荐" />
+
+    <item
+        android:id="@+id/conversationListFragment"
+        android:icon="@mipmap/ic_logout_ref"
+        android:title="私聊" />
+
+    <item
+        android:id="@+id/userCenterFragment"
+        android:icon="@mipmap/ic_logout_ref"
+        android:title="我的" />
+</menu>

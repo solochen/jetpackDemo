@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/hotFragment">
+
+    <fragment
+        android:id="@+id/hotFragment"
+        android:name="com.solochen.kotlin.ui.fragment.HotFragment"
+        android:label="fragment_hot"
+        tools:layout="@layout/fragment_hot" />
+    <fragment
+        android:id="@+id/recommentFragment"
+        android:name="com.solochen.kotlin.ui.fragment.RecommendFragment"
+        android:label="fragment_recomment"
+        tools:layout="@layout/fragment_recommend" />
+    <fragment
+        android:id="@+id/conversationListFragment"
+        android:name="com.solochen.kotlin.ui.fragment.ConversationListFragment"
+        android:label="fragment_conversation_list"
+        tools:layout="@layout/fragment_conversation_list" />
+    <fragment
+        android:id="@+id/userCenterFragment"
+        android:name="com.solochen.kotlin.ui.fragment.UserCenterFragment"
+        android:label="fragment_user_center"
+        tools:layout="@layout/fragment_user_center" />
+</navigation>

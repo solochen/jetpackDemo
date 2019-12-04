@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+
+    //dataBinding need
+    dataBinding {
+        enabled true
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    compileSdkVersion externalCompileSDKVersion
+    buildToolsVersion externalBuildToolsVersion
+    defaultConfig {
+        applicationId "com.solochen.kotlin"
+        minSdkVersion externalMinSDKVersion
+        targetSdkVersion externalTargetSDKVersion
+        versionCode externalVersionCode
+        versionName externalVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //kotlin need
+    implementation externalKotlinJDK
+
+    implementation externalAndroidxAppcompat
+    implementation externalAdroidxCore
+
+    implementation externalConstraintlayout
+    implementation externalLegacy
+
+    //navigation
+    implementation externalNavigationFragment
+    implementation externalNavigationUI
+
+    //cameraX
+    implementation externalCameraCore
+    implementation externalCamera2
+
+    //paging
+    implementation externalPagingRuntime
+    implementation externalPagingRxjava
+
+    // room
+    implementation externalRoomRuntime
+    implementation externalRoomKtx
+    kapt externalRoomCompiler
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
