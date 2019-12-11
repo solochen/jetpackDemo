@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="font_14">14dp</dimen>
+    <dimen name="font_16">16dp</dimen>
+
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_30">30dp</dimen>
+
+
+    <dimen name="button_height_48">48dp</dimen>
+    <dimen name="button_height_58">58dp</dimen>
+
+    <!-- BottomNavigationView 定义选中和未选中的字体大小一致，解决点击后放大效果问题 -->
+    <dimen name="design_bottom_navigation_active_text_size">14dp</dimen>
+    <dimen name="design_bottom_navigation_text_size">14dp</dimen>
+
+</resources>

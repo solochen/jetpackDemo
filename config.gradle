@@ -1,11 +1,13 @@
-ext{
+ext {
     dependVersion = [
-            kotlinVersion: "1.3.50",
-            navVersion: "2.1.0",
-            cameraxVersion: "1.0.0-alpha06",
-            pagingVersion: "2.1.0-alpha01",
+            kotlinVersion      : "1.3.50",
+            navVersion         : "2.1.0",
+            cameraxVersion     : "1.0.0-alpha06",
+            pagingVersion      : "2.1.0-alpha01",
             pagingRxjavaVersion: "1.0.0-rc1",
-            roomVersion:"2.1.0-beta01"
+            roomVersion        : "2.1.0-beta01",
+            lifecycleVersion   : "2.2.0-alpha01",
+            ankoVersion        : "0.10.8"
     ]
 
     externalCompileSDKVersion = 28
@@ -13,10 +15,10 @@ ext{
     externalMinSDKVersion = 21
     externalTargetSDKVersion = 28
 
-    externalVersionCode = 1
-    externalVersionName = '1.0'
+    externalVersionCode = 2
+    externalVersionName = '2.0'
 
-    externalAndroidxAppcompat= "androidx.appcompat:appcompat:1.0.2"
+    externalAndroidxAppcompat = "androidx.appcompat:appcompat:1.0.2"
     externalAdroidxCore = "androidx.core:core-ktx:1.0.2"
 
     externalConstraintlayout = "androidx.constraintlayout:constraintlayout:1.1.3"
@@ -32,16 +34,34 @@ ext{
     externalNavigationUI = "androidx.navigation:navigation-ui-ktx:$dependVersion.navVersion"
 
     //cameraX
-    externalCameraCore =  "androidx.camera:camera-core:$dependVersion.cameraxVersion"
+    externalCameraCore = "androidx.camera:camera-core:$dependVersion.cameraxVersion"
     externalCamera2 = "androidx.camera:camera-camera2:$dependVersion.cameraxVersion"
 
     //paging
     externalPagingRuntime = "androidx.paging:paging-runtime:$dependVersion.pagingVersion"
-    externalPagingRxjava =  "android.arch.paging:rxjava2:$dependVersion.pagingRxjavaVersion"
+    externalPagingRxjava = "android.arch.paging:rxjava2:$dependVersion.pagingRxjavaVersion"
 
     // room
     externalRoomRuntime = "androidx.room:room-runtime:$dependVersion.roomVersion"
-    externalRoomKtx =  "androidx.room:room-ktx:$dependVersion.roomVersion"
+    externalRoomKtx = "androidx.room:room-ktx:$dependVersion.roomVersion"
     externalRoomCompiler = "androidx.room:room-compiler:$dependVersion.roomVersion"
+
+    //lifecycle liveData
+    externalLifecycleLivedata = "androidx.lifecycle:lifecycle-livedata-ktx:$dependVersion.lifecycleVersion"
+
+    externalLifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$dependVersion.lifecycleVersion"
+
+    //lifecycle viewModel
+    externalLifecycleViewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$dependVersion.lifecycleVersion"
+    externalLifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:$dependVersion.lifecycleVersion"
+
+    //anko
+    externalAnko = "org.jetbrains.anko:anko:$dependVersion.ankoVersion"
+    externalAnkoCommons = "org.jetbrains.anko:anko-commons:$dependVersion.ankoVersion"
+    externalAnkoV7Commons = "org.jetbrains.anko:anko-appcompat-v7-commons:$dependVersion.ankoVersion"
+
+    //fastjson
+    externalFastJson = "com.alibaba:fastjson:1.2.32"
+
 
 }

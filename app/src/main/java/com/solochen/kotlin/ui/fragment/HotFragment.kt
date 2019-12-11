@@ -38,7 +38,7 @@ class HotFragment : Fragment(), LifecycleOwner {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_hot, container, false)
+        return inflater.inflate(R.layout.fragment_main_hot, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

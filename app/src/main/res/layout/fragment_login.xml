@@ -3,13 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="model"
-            type="com.solochen.kotlin.model.LoginModel"/>
 
         <variable
-            name="activity"
-            type="androidx.fragment.app.FragmentActivity"/>
+            name="model"
+            type="com.solochen.kotlin.viewmodel.model.LoginModel" />
     </data>
 
 
@@ -17,61 +14,64 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="@dimen/spacing_20"
+        android:paddingRight="@dimen/spacing_20"
         tools:context=".ui.fragment.LoginFragment">
 
         <EditText
             android:id="@+id/et_username"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="30dp"
-            android:background="#CCC"
-            android:hint="输入用户名"
-            android:inputType="number"
-            android:maxLength="11"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginTop="@dimen/spacing_30"
+            android:background="@color/gray"
+            android:hint="@string/hint_user_account"
+            android:maxLength="20"
+            android:onTextChanged="@{model::onTextAccountChanged}"
+            android:paddingLeft="@dimen/spacing_10"
+            android:paddingRight="@dimen/spacing_10"
             android:singleLine="true"
-            android:textColor="#333"
-            android:textSize="14sp" />
+            android:text="@{model.account}"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_14" />
 
         <EditText
             android:id="@+id/et_password"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginTop="@dimen/spacing_20"
             android:layout_toRightOf="@+id/iv_lock"
-            android:background="#ccc"
+            android:background="@color/gray"
             android:cursorVisible="true"
             android:focusable="true"
-            android:hint="输入密码"
+            android:hint="@string/hint_user_password"
             android:imeOptions="actionDone"
-            android:inputType="number"
+            android:inputType="textPassword"
             android:maxLength="6"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColor="#333"
-            android:textSize="14sp" />
+            android:onTextChanged="@{model::onTextPasswordChanged}"
+            android:paddingLeft="@dimen/spacing_10"
+            android:paddingRight="@dimen/spacing_10"
+            android:text="@{model.password}"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_14" />
 
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="20dp"
-            android:text="登录"
-            android:textColor="#333"
-            android:textSize="16dp" />
+            android:layout_height="@dimen/button_height_58"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:text="@string/button_login"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_16" />
 
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginTop="20dp"
-            android:text="注册"
-            android:textColor="#333"
-            android:textSize="16dp" />
+            android:layout_height="@dimen/button_height_58"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:text="@string/button_register"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_16" />
 
     </LinearLayout>
 </layout>

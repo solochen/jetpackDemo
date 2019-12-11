@@ -1,81 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    tools:context=".ui.fragment.LoginFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <EditText
-        android:id="@+id/et_username"
+    <data>
+
+        <variable
+            name="model"
+            type="com.solochen.kotlin.viewmodel.model.RegisterModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="30dp"
-        android:background="#CCC"
-        android:hint="输入用户名"
-        android:inputType="number"
-        android:maxLength="11"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:singleLine="true"
-        android:textColor="#333"
-        android:textSize="14sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/spacing_20"
+        android:paddingRight="@dimen/spacing_20">
 
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/iv_lock"
-        android:background="#ccc"
-        android:cursorVisible="true"
-        android:focusable="true"
-        android:hint="输入密码"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:maxLength="6"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#333"
-        android:textSize="14sp" />
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginTop="@dimen/spacing_30"
+            android:background="@color/gray"
+            android:hint="@string/hint_user_account"
+            android:maxLength="20"
+            android:onTextChanged="@{model::onTextAccountChanged}"
+            android:paddingLeft="@dimen/spacing_10"
+            android:paddingRight="@dimen/spacing_10"
+            android:singleLine="true"
+            android:text="@{model.account}"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_14" />
 
-    <EditText
-        android:id="@+id/et_pw_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/iv_lock"
-        android:background="#ccc"
-        android:cursorVisible="true"
-        android:focusable="true"
-        android:hint="再次输入密码"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:maxLength="6"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="#333"
-        android:textSize="14sp" />
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:layout_toRightOf="@+id/iv_lock"
+            android:background="@color/gray"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:hint="@string/hint_user_password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="6"
+            android:onTextChanged="@{model::onTextPasswordChanged}"
+            android:paddingLeft="@dimen/spacing_10"
+            android:paddingRight="@dimen/spacing_10"
+            android:text="@{model.password}"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_14" />
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginTop="20dp"
-        android:text="注册并登录"
-        android:textColor="#333"
-        android:textSize="16dp" />
+        <EditText
+            android:id="@+id/et_pw_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_48"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:layout_toRightOf="@+id/iv_lock"
+            android:background="@color/gray"
+            android:cursorVisible="true"
+            android:focusable="true"
+            android:hint="@string/hint_user_password_again"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:maxLength="6"
+            android:onTextChanged="@{model::onTextPasswordAgainChanged}"
+            android:paddingLeft="@dimen/spacing_10"
+            android:paddingRight="@dimen/spacing_10"
+            android:text="@{model.passwordAgain}"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_14" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:layout_marginTop="20dp"
-        android:text="老用户登录"
-        android:textColor="#333"
-        android:textSize="16dp" />
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_58"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:text="@string/button_register"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_16" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_58"
+            android:layout_marginTop="@dimen/spacing_20"
+            android:text="@string/button_login_old"
+            android:textColor="@color/black_primary"
+            android:textSize="@dimen/font_16" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

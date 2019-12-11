@@ -9,20 +9,20 @@
         android:id="@+id/hotFragment"
         android:name="com.solochen.kotlin.ui.fragment.HotFragment"
         android:label="fragment_hot"
-        tools:layout="@layout/fragment_hot" />
+        tools:layout="@layout/fragment_main_hot" />
     <fragment
         android:id="@+id/recommentFragment"
         android:name="com.solochen.kotlin.ui.fragment.RecommendFragment"
         android:label="fragment_recomment"
-        tools:layout="@layout/fragment_recommend" />
+        tools:layout="@layout/fragment_main_recommend" />
     <fragment
         android:id="@+id/conversationListFragment"
         android:name="com.solochen.kotlin.ui.fragment.ConversationListFragment"
         android:label="fragment_conversation_list"
-        tools:layout="@layout/fragment_conversation_list" />
+        tools:layout="@layout/fragment_main_conversation_list" />
     <fragment
         android:id="@+id/userCenterFragment"
         android:name="com.solochen.kotlin.ui.fragment.UserCenterFragment"
         android:label="fragment_user_center"
-        tools:layout="@layout/fragment_user_center" />
+        tools:layout="@layout/fragment_main_center" />
 </navigation>

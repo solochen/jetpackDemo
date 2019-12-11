@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="@color/gray_norm"
     tools:context=".ui.activity.MainActivity">
 
     <fragment
@@ -24,7 +24,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu_main"
-        android:background="#ff2d55"
-        app:itemTextColor="#33ccff"/>
+        app:labelVisibilityMode="labeled"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/sel_main_nav_color"
+        app:itemTextColor="@drawable/sel_main_nav_color"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

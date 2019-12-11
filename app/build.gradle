@@ -62,6 +62,23 @@ dependencies {
     implementation externalRoomKtx
     kapt externalRoomCompiler
 
+    //lifecycle liveData
+    implementation externalLifecycleLivedata
+
+    implementation externalLifecycleRuntime
+
+    //lifecycle viewModel
+    implementation externalLifecycleViewmodel
+    implementation externalLifecycleExtensions
+
+    //anko
+    implementation externalAnko
+//    implementation externalAnkoCommons
+//    implementation externalAnkoV7Commons
+
+    //fastjson
+    implementation externalFastJson
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
