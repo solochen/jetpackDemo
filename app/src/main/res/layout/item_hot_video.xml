@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="video"
+            type="com.solochen.kotlin.data.entity.VideoItem" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="playCoverIsShow"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_10"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:layout_marginRight="@dimen/spacing_10"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/spacing_10">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height_230"
+                app:layout_constraintTop_toTopOf="parent"
+                app:player_layout_id="@layout/toro_exo_player_view"
+                app:resize_mode="fixed_height"
+                app:surface_type="texture_view"
+                app:use_controller="true" />
+
+            <ImageView
+                android:id="@+id/iv_cover"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="@{playCoverIsShow? View.VISIBLE : View.GONE}"
+                app:imageFromUrl="@{video.avatar}"
+                app:layout_constraintBottom_toBottomOf="@+id/player"
+                app:layout_constraintLeft_toLeftOf="@+id/player"
+                app:layout_constraintRight_toRightOf="@+id/player"
+                app:layout_constraintTop_toTopOf="@+id/player" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:lineSpacingMultiplier="1.1"
+                android:maxLines="2"
+                android:paddingLeft="@dimen/spacing_10"
+                android:paddingRight="@dimen/spacing_10"
+                android:text="@{video.title}"
+                android:textColor="@color/black_primary"
+                android:textSize="@dimen/font_16"
+                app:layout_constraintTop_toBottomOf="@+id/player" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -10,6 +10,7 @@
 
     <dimen name="button_height_48">48dp</dimen>
     <dimen name="button_height_58">58dp</dimen>
+    <dimen name="button_height_230">230dp</dimen>
 
     <!-- BottomNavigationView 定义选中和未选中的字体大小一致，解决点击后放大效果问题 -->
     <dimen name="design_bottom_navigation_active_text_size">14dp</dimen>
