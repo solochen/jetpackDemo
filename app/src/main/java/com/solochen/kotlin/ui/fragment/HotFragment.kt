@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.solochen.kotlin.R
 import com.solochen.kotlin.databinding.FragmentMainHotBinding
@@ -21,13 +22,13 @@ import im.ene.toro.widget.PressablePlayerSelector
  */
 class HotFragment : Fragment() {
 
-    private val hotVideoModel: HotVideoModel by viewModels {
+    private val viewModel: HotVideoModel by viewModels {
         AppViewModelProvider.providerHotVideoModel(requireContext())
     }
 
-    lateinit var mLayoutManager: LinearLayoutManager
-    lateinit var mSelector: PressablePlayerSelector
-    lateinit var mAdapter: HotVideoAdapter
+    private lateinit var mLayoutManager: LinearLayoutManager
+    private lateinit var mSelector: PressablePlayerSelector
+    private lateinit var mAdapter: HotVideoAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,8 +36,13 @@ class HotFragment : Fragment() {
     ): View? {
         val binding: FragmentMainHotBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_main_hot, container, false)
-        binding.model = hotVideoModel
+
         initRecycler(binding)
+
+        viewModel.getRefreshLiveData().observe(this, Observer {
+            mAdapter.submitList(it)
+        })
+
         return binding.root
     }
 
@@ -46,8 +52,10 @@ class HotFragment : Fragment() {
         mSelector = PressablePlayerSelector(binding.recycler)
         binding.recycler.playerSelector = mSelector
 
-        mAdapter = HotVideoAdapter(mSelector, hotVideoModel.getVideoData(context!!))
+        mAdapter = HotVideoAdapter(mSelector)
         binding.recycler.adapter = mAdapter
     }
+
+
 
 }

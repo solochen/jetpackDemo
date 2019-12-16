@@ -4,7 +4,6 @@ import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.exoplayer2.ui.PlayerView
-import com.solochen.kotlin.R
 import com.solochen.kotlin.data.entity.VideoItem
 import com.solochen.kotlin.databinding.ItemHotVideoBinding
 import im.ene.toro.ToroPlayer

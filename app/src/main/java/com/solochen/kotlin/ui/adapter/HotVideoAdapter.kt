@@ -3,14 +3,25 @@ package com.solochen.kotlin.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.DiffUtil
 import com.solochen.kotlin.data.entity.VideoItem
 import com.solochen.kotlin.databinding.ItemHotVideoBinding
 import com.solochen.kotlin.ui.viewholder.HotPlayerViewHolder
 import im.ene.toro.widget.PressablePlayerSelector
 
-class HotVideoAdapter constructor(private val selector: PressablePlayerSelector, private var mList: MutableList<VideoItem>) :
-    RecyclerView.Adapter<HotPlayerViewHolder>() {
+class HotVideoAdapter constructor(private val selector: PressablePlayerSelector) :
+    PagedListAdapter<VideoItem, HotPlayerViewHolder>(DIFF_CALLBACK) {
+
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<VideoItem>() {
+            override fun areItemsTheSame(oldConcert: VideoItem, newConcert: VideoItem): Boolean =
+                oldConcert.avatar == newConcert.avatar
+
+            override fun areContentsTheSame(oldConcert: VideoItem, newConcert: VideoItem): Boolean =
+                oldConcert == newConcert
+        }
+    }
 
     lateinit var context: Context
 
@@ -30,13 +41,10 @@ class HotVideoAdapter constructor(private val selector: PressablePlayerSelector,
         return viewHolder
     }
 
-    override fun getItemCount(): Int {
-        return mList.size
-    }
 
     override fun onBindViewHolder(holder: HotPlayerViewHolder, position: Int) {
         holder.apply {
-            bind(mList.get(position))
+            bind(getItem(position)!!)
         }
     }
 
